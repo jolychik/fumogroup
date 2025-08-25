@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Fumo Group</title>
+  <link rel="shortcut icon" href="images/logo.webp" type="image/webp" sizes="10px">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header style="margin-bottom: 50px;">
+      <h1><a href="https://t.me/addlist/vdqr3O_--9g2NTZi" target="_blank" class="top_link">Fumo Group Секта</a></h1>
+      <a href="log_sekta.html" class="changelog-btn">Изменения в папке</a>
+     
+    </header>
+
+    <section class="grid" id="grid"></section>
+
+    <footer>
+      <a href="https://t.me/jolychik" target="_blank" class="changelog-btn footer-btn-right">Александр: Вектор</a>
+      <div class="footer-images-group">
+        <a href="/dorev/main_dorev.html">
+          <img src="images/logo.webp" alt="" class="footer-image-logo">
+        </a>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Модальное окно для карточек -->
+  <div id="modal" class="modal" style="display:none; position:fixed; z-index:1000; left:0; top:0; width:100vw; height:100vh; background:rgba(0,0,0,0.5);">
+    <div class="modal-content" style="background: radial-gradient(#1b2040, #0f1220 60%); margin:40px auto; padding:20px; padding-top: 55px; border-radius:8px; max-width:600px; min-width:300px; position:relative;">
+      <span id="modal-close" class="modal-close" style="cursor:pointer; position:absolute; top:10px; right:20px; font-size:2em;">&times;</span>
+      <section class="grid" id="modal-grid"></section>
+    </div>
+  </div>
+
+  <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
+  <script>
+    // массив с карточками
+    const items = [
+           { 
+        title: 'my blog сЪ приколами', 
+        url: 'https://youtube.com', 
+        desc: '+ Приколо-ДебилизмЪ + АртачЪ + Karelian Tweet Clique (создатель сей хуйни + ахуенен и пиздат)', 
+        image: 'images/blog.jpg', 
+        bg: 'linear-gradient(180deg, rgba(255, 255, 255, 0.6) 0%, rgba(0, 57, 166, 0.6) 50%, rgba(213, 43, 30, 0.6) 100%)',
+        modalItems: [
+          { title: 'my blog сЪ приколами', url: 'https://t.me/myblogsprikolami', desc: 'блог + мемчики (или наоборот)', image: 'images/blog.jpg',
+           // bg: 'linear-gradient(180deg, rgba(0, 0, 0, 0.5) 50%, rgba(255, 206, 0, 0.5) 100%)'
+          },
+          { title: 'Приколо-ДебилизмЪ', url: 'https://t.me/prikolodebilizm', desc: 'Оригинальный конент', image: 'images/prikolodebilizm.jpg',
+           // bg: 'linear-gradient(180deg, rgba(0, 0, 0, 0.5) 50%, rgba(255, 206, 0, 0.5) 100%)'
+          },
+          { title: 'АртачЪ', url: 'https://t.me/artach_uwu', desc: 'Артики картинки + красивые тяночки', image: 'images/artach.jpg',
+           // bg: 'linear-gradient(180deg, rgba(255, 206, 0, 0.5) 0%, rgba(255, 255, 255, 0.5) 50%)'
+          },
+          { title: 'Karelioan Tweet Clique', url: 'https://t.me/KarelianTweetClique', desc: 'Всякая ржака и иногда соя с ныттера', image: 'images/ktc.jpg',
+            // bg: 'linear-gradient(180deg, rgba(255, 206, 0, 0.5) 0%, rgba(255, 255, 255, 0.5) 50%)'
+          }
+        ]
+      },
+
+      { 
+        title: 'Говорит ПеZец 🇷🇺', 
+        url: 'https://t.me/ICantBreathe1488', 
+        desc: 'Организатор папки + фембой постинг', 
+        image: 'images/pesec.jpg', 
+        bg: 'rey-gradient',
+        modalItems: [
+          { title: 'Говорит ПеZец 🇷🇺', url: 'https://t.me/ICantBreathe1488', desc: 'Мемы, картинки всякие', image: 'images/pesec.jpg' },
+          { title: 'Femboyposting 🌸', url: 'https://t.me/femboyZfum', desc: 'я отказываюсь от описания', image: 'images/femboy.jpg' }
+        ]
+      },
+
+      { title: '🍉stereo funish posting🍉', url: 'https://t.me/funishstereomeeeeee', desc: 'музей', image: 'images/funish.jpg' },
+
+      { 
+        title: 'depress&obsess [D&O] 🦔 ᗜˬᗜ', 
+        url: 'https://t.me/depress_obsession', 
+        desc: '+ Тетоизм🥖', 
+        image: 'images/frap.jpg', 
+        modalItems: [
+          { title: 'depress&obsess [D&O] 🦔 ᗜˬᗜ', url: 'https://t.me/depress_obsession', desc: 'Когда Fap Posting?', image: 'images/frap.jpg' },
+          { title: 'Тетоизм🥖', url: 'https://t.me/tetoism', desc: 'Сатоко', image: 'images/tetoizm.jpg' }
+        ]
+      },
+
+      { title: 'Груз 134 татарстан 2.0 ᗜˬᗜ', url: 'https://t.me/proschmandsanderaz', desc: '', image: 'images/134.jpg' },
+
+      { 
+        title: '𝗕𝗮𝘀𝗲𝗱 𝗠𝗮𝗴𝗻𝘂𝗺`𝘀 𝗖𝗼𝗺𝗶𝘁𝗲𝘁', 
+        url: 'https://t.me/BasedMagnumsComitet', 
+        desc: '+ ᯽ Satokoposting 💛', 
+        image: 'images/magnum.jpg', 
+        modalItems: [
+          { title: '᯽𝗕𝗮𝘀𝗲𝗱 𝗠𝗮𝗴𝗻𝘂𝗺`𝘀 𝗖𝗼𝗺𝗶𝘁𝗲𝘁᯽', url: 'https://t.me/BasedMagnumsComitet', desc: 'Э а о', image: 'images/magnum.jpg' },
+          { title: '᯽ Satokoposting 💛', url: 'https://t.me/CATOKO3ABUCUMOCTb', desc: '', image: 'images/satokoposting.jpg' }
+        ]
+      },
+
+      { title: 'ХОХЛЫЫЫЫЫЫЫЫЫ ᗜˬᗜ🍓', url: 'https://t.me/x8x8L_Gol', desc: '', image: 'images/hohly.jpg' },
+
+      { title: 'CcPC ᗜ⩊ᗜ', url: 'https://t.me/ccpcshitpost', desc: 'Гой', image: 'images/ccpc.jpg' },
+
+      { 
+        title: 'Анекдотический Каталог (Б)', 
+        url: 'https://t.me/katalog_anekdotov', 
+        desc: '+ Putinposting❤️💙🤍', 
+        image: 'images/anekdoty.jpg', 
+        modalItems: [
+          { title: 'Анекдотический Каталог (Б)', url: 'https://t.me/katalog_anekdotov', desc: 'Хи-хи ха-ха', image: 'images/anekdoty.jpg' },
+          { title: 'Putinposting❤️💙🤍', url: 'https://t.me/TTYTUH3ABUCUMOCTb', desc: '', image: 'images/putinposting.jpg' }
+        ]
+      },
+
+      { title: 'Невероятные путешествие фумо 🇷🇺', url: 'https://t.me/fumo_and_RZD', desc: '', image: 'images/fumoRZD.jpg' },
+
+      { title: 'It`s hard 🍓🍉', url: 'https://t.me/shphard', desc: '', image: 'images/pantiak.jpg' },
+
+      { title: 'Цейхгауз 2.0', url: 'https://t.me/Zeughauss', desc: '', image: 'images/banlordik.jpg' },   
+
+      { title: 'свалка фумоᗜˬᗜ', url: 'https://t.me/fumozxc', desc: '', image: 'images/svalka_fumo.jpg' }, 
+
+      { title: 'ᛏᛟᚢᚺᛟᚢ᛫ᛈᛟᚱᚾᛟ', url: 'https://t.me/touhouporno', desc: '', image: 'images/touhou.jpg' },   
+
+      { title: 'КАК ВЫЖИТЬ', url: 'https://t.me/prikolysineta', desc: '', image: 'images/kak.jpg' },   
+
+      { title: 'Вилаят Бачастан', url: 'https://t.me/femboystan14', desc: '', image: 'images/vilayat.jpg' },   
+
+      { title: 'Проект "Нефтяная Комната"', url: 'https://t.me/oil_records', desc: 'проджект сайберия'+'ㅤㅤㅤㅤㅤㅤ'+'(без него ничего бы не было)', image: 'images/oil.jpg', bg: 'siberia-gradient'},   
+
+      { title: 'Слава Фумо z', url: 'https://t.me/slavafumo1488Z', desc: 'настоящий живой американец', image: 'images/slava_fumo.jpg' },   
+
+      { title: 'Subarashii shoujo archive 🍓', url: 'https://t.me/subarashii_shoujo', desc: '', image: 'images/subarashi.jpg' },   
+
+         { 
+        title: 'Микуизм 🍇🌸', 
+        url: 'https://t.me/miku39gladit', 
+        desc: '+ Неруизм 💛', 
+        image: 'images/mikuizm.jpg', 
+        modalItems: [
+          { title: 'Микуизм 🍇🌸', url: 'https://t.me/miku39gladit', desc: 'уу-ии-юю', image: 'images/mikuizm.jpg' },
+          { title: 'Неруизм 💛', url: 'https://t.me/neruDEN2', desc: '', image: 'images/neruizm.jpg' }
+        ]
+      },
+
+      { title: 'Осетинские Пироги 🍐 культ любви Raisen 🚺', url: 'https://t.me/OsetPie', desc: '', image: 'images/pirogi.jpg' },
+
+      { title: '〰️〰️Bocchi the neet〰️〰️', url: 'https://t.me/BocchiTheNeet', desc: '', image: 'images/bocchi.jpg' },   
+
+      { title: 'loneliness all over', url: 'https://t.me/noiseeverywhere', desc: '', image: 'images/loneliness.jpg' },   
+
+      { title: '⚡️Хуевый🇦🇬Николаев⚡️', url: 'https://t.me/Hueviu_Nikolaev227', desc: '', image: 'images/nikolaev.jpg' },   
+
+      { title: 'альТУШКИ😳Пикчи😱Скачать🤑Трахатъ😈3+', url: 'https://t.me/+vzp97Xvolv1jZjJk', desc: '', image: 'images/altushki.jpg' },   
+
+      { title: 'Weirdo autistic people', url: 'https://t.me/CutePeople3', desc: '', image: 'images/weirdo.jpg' },   
+
+      { title: 'добро и позитив real 🇸🇴', url: 'https://t.me/slaboumieplezen', desc: '', image: 'images/dobro.jpg' },   
+    ];
+
+    // Неиспользуемая кнопка для моих каналов
+    /*
+    const adminChannels = [
+      { title: 'test', url: '', desc: 'Главный канал', image: '' },
+      { title: 'test', url: '', desc: 'Новости', image: '' },
+      { title: 'test', url: '', desc: 'Общение', image: '' }
+      
+    ];
+    */
+    function renderCards(itemsToRender = items, gridId = 'grid') {
+      const grid = document.getElementById(gridId);
+      grid.innerHTML = '';
+
+      itemsToRender.slice(0, 32).forEach((it, idx) => {
+        const clickable = Boolean(it.url && it.url.trim());
+        const hasModal = Array.isArray(it.modalItems);
+        const wrapper = document.createElement(hasModal ? 'div' : (clickable ? 'a' : 'div'));
+        wrapper.className = 'card' + (clickable || hasModal ? '' : ' disabled');
+
+        // Установка фона карточки, если задано свойство bg
+        if (it.bg) {
+          switch (it.bg) {
+            case 'rey-gradient':
+              wrapper.classList.add('rey-gradient');
+              break;
+          
+            case 'siberia-gradient':
+              wrapper.classList.add('siberia-gradient');
+              break;
+          
+            default:
+              // Если это не имя класса, а сам градиент
+              wrapper.style.background = it.bg;
+              break;
+          }
+        
+          wrapper.style.border = 'none';
+        }
+
+
+
+        if (clickable && !hasModal) {
+          wrapper.href = it.url;
+          wrapper.target = '_blank';
+          wrapper.rel = 'noopener';
+        }
+
+        const badge = document.createElement('div');
+        badge.className = 'badge';
+        badge.textContent = String(idx + 1).padStart(2, '0');
+
+        const thumb = document.createElement('div');
+        thumb.className = 'thumb';
+
+        if (it.image) {
+          const img = document.createElement('img');
+          img.src = it.image;
+          img.alt = it.title || '';
+          thumb.appendChild(img);
+        } else {
+          thumb.textContent = (it.title?.[0] || '#').toUpperCase();
+        }
+
+        const title = document.createElement('h3');
+        title.className = 'title';
+        title.textContent = it.title || `Карточка ${idx + 1}`;
+
+        const desc = document.createElement('p');
+        desc.className = 'desc';
+        desc.textContent = it.desc || '';
+
+        wrapper.appendChild(badge);
+        wrapper.appendChild(thumb);
+        wrapper.appendChild(title);
+        wrapper.appendChild(desc);
+
+        // Если есть modalItems, открываем модалку по клику
+        if (hasModal) {
+          wrapper.style.cursor = 'pointer';
+          wrapper.addEventListener('click', function(e) {
+            e.preventDefault();
+            openModal(it.modalItems);
+          });
+        }
+
+        grid.appendChild(wrapper);
+      });
+
+      // После рендера карточек парсим эмоджи
+      twemoji.parse(document.body);
+    }
+
+    // Модальное окно
+    function openModal(modalItems) {
+      document.getElementById('modal').style.display = 'block';
+      renderCards(modalItems, 'modal-grid');
+    }
+    function closeModal() {
+      document.getElementById('modal').style.display = 'none';
+      document.getElementById('modal-grid').innerHTML = '';
+    }
+    document.getElementById('modal-close').onclick = closeModal;
+    window.onclick = function(event) {
+      const modal = document.getElementById('modal');
+      if (event.target === modal) closeModal();
+    };
+
+    /* ненужная кнопка для можального окна с моими каналами
+
+    document.getElementById('admin-channels-btn').onclick = function(e) {
+      e.preventDefault();
+      document.getElementById('modal').style.display = 'block';
+      renderCards(adminChannels, 'modal-grid');
+    };
+ */
+    renderCards();
+  </script>
+</body>
+</html>
