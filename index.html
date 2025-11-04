@@ -4,8 +4,14 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Fumo Group</title>
-  <link rel="shortcut icon" href="images/logo.webp" type="image/webp" sizes="10px">
+  <link rel="shortcut icon" href="images/logo2.jpg" type="image/webp" sizes="10px">
   <link rel="stylesheet" href="style.css">
+  <!-- подтяжка эмоджи из ныттера -->
+  <script src="https://unpkg.com/twemoji@latest/dist/twemoji.min.js" crossorigin="anonymous"></script>
+  <style>
+    /* Небольшой запас шрифтов-эмодзи на случай, если Twemoji не загрузится */
+    .emoji { font-family: "Segoe UI Emoji", "Noto Color Emoji", "Apple Color Emoji", "Segoe UI Symbol", sans-serif; }
+  </style>
 </head>
 <body>
   <div class="container">
@@ -20,7 +26,7 @@
     <footer>
       <a href="https://t.me/jolychik" target="_blank" class="changelog-btn footer-btn-right">Александр: Вектор</a>
       <div class="footer-images-group">
-        <a href="dorev/main_dorev.html">
+        <a href="/dorev/main_dorev.html">
           <img src="images/logo.webp" alt="" class="footer-image-logo">
         </a>
       </div>
@@ -35,7 +41,6 @@
     </div>
   </div>
 
-  <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
   <script>
     // массив с карточками
     const items = [
@@ -43,10 +48,10 @@
         title: 'my blog сЪ приколами', 
         url: 'https://youtube.com', 
         desc: '+ Приколо-ДебилизмЪ + АртачЪ + Karelian Tweet Clique (создатель сей хуйни + ахуенен и пиздат)', 
-        image: 'images/blog.jpg', 
+        image: 'images/blog2.jpg', 
         bg: 'linear-gradient(180deg, rgba(255, 255, 255, 0.6) 0%, rgba(0, 57, 166, 0.6) 50%, rgba(213, 43, 30, 0.6) 100%)',
         modalItems: [
-          { title: 'my blog сЪ приколами', url: 'https://t.me/myblogsprikolami', desc: 'блог + мемчики (или наоборот)', image: 'images/blog.jpg',
+          { title: 'my blog сЪ приколами', url: 'https://t.me/myblogsprikolami', desc: 'блог + мемчики (или наоборот)', image: 'images/blog2.jpg',
            // bg: 'linear-gradient(180deg, rgba(0, 0, 0, 0.5) 50%, rgba(255, 206, 0, 0.5) 100%)'
           },
           { title: 'Приколо-ДебилизмЪ', url: 'https://t.me/prikolodebilizm', desc: 'Оригинальный конент', image: 'images/prikolodebilizm.jpg',
@@ -62,18 +67,18 @@
       },
 
       { 
-        title: 'Говорит ПеZец 🇷🇺', 
-        url: 'https://t.me/ICantBreathe1488', 
+        title: 'Песцовая Народно-Демократическая Республика',
+        url: 'https://t.me/PeZec_say', 
         desc: 'Организатор папки + фембой постинг', 
         image: 'images/pesec.jpg', 
         bg: 'rey-gradient',
         modalItems: [
-          { title: 'Говорит ПеZец 🇷🇺', url: 'https://t.me/ICantBreathe1488', desc: 'Мемы, картинки всякие', image: 'images/pesec.jpg' },
+          { title: 'Говорит ПеZец 🇷🇺', url: 'https://t.me/PeZec_say', desc: 'Мемы, картинки всякие', image: 'images/pesec.jpg' },
           { title: 'Femboyposting 🌸', url: 'https://t.me/femboyZfum', desc: 'я отказываюсь от описания', image: 'images/femboy.jpg' }
         ]
       },
 
-      { title: '🍉stereo funish posting🍉', url: 'https://t.me/funishstereomeeeeee', desc: 'музей', image: 'images/funish.jpg' },
+     // { title: '🍉stereo funish posting🍉', url: 'https://t.me/funishstereomeeeeee', desc: 'музей', image: 'images/funish.jpg' },
 
       { 
         title: 'depress&obsess [D&O] 🦔 ᗜˬᗜ', 
@@ -82,19 +87,19 @@
         image: 'images/frap.jpg', 
         modalItems: [
           { title: 'depress&obsess [D&O] 🦔 ᗜˬᗜ', url: 'https://t.me/depress_obsession', desc: 'Когда Fap Posting?', image: 'images/frap.jpg' },
-          { title: 'Тетоизм🥖', url: 'https://t.me/tetoism', desc: 'Сатоко', image: 'images/tetoizm.jpg' }
+          { title: 'Тетоизм🥖', url: 'https://t.me/tetoism', desc: '', image: 'images/tetoizm.jpg' }
         ]
       },
 
-      { title: 'Груз 134 татарстан 2.0 ᗜˬᗜ', url: 'https://t.me/proschmandsanderaz', desc: 'у него сегодня ДР кстати', image: 'images/134.jpg' },
+      { title: 'Груз 134 татарстан 2.0 ᗜˬᗜ', url: 'https://t.me/proschmandsanderaz', desc: '', image: 'images/134.jpg' },
 
       { 
         title: '𝗕𝗮𝘀𝗲𝗱 𝗠𝗮𝗴𝗻𝘂𝗺`𝘀 𝗖𝗼𝗺𝗶𝘁𝗲𝘁', 
-        url: 'https://t.me/BasedMagnumsComitet', 
+        url: 'https://t.me/Based_Magnums_Comitett', 
         desc: '+ ᯽ Satokoposting 💛', 
         image: 'images/magnum.jpg', 
         modalItems: [
-          { title: '᯽𝗕𝗮𝘀𝗲𝗱 𝗠𝗮𝗴𝗻𝘂𝗺`𝘀 𝗖𝗼𝗺𝗶𝘁𝗲𝘁᯽', url: 'https://t.me/BasedMagnumsComitet', desc: 'Э а о', image: 'images/magnum.jpg' },
+          { title: '᯽𝗕𝗮𝘀𝗲𝗱 𝗠𝗮𝗴𝗻𝘂𝗺`𝘀 𝗖𝗼𝗺𝗶𝘁𝗲𝘁᯽', url: 'https://t.me/Based_Magnums_Comitet', desc: 'Э а о', image: 'images/magnum.jpg' },
           { title: '᯽ Satokoposting 💛', url: 'https://t.me/CATOKO3ABUCUMOCTb', desc: '', image: 'images/satokoposting.jpg' }
         ]
       },
@@ -114,9 +119,9 @@
         ]
       },
 
-      { title: 'Невероятные путешествие фумо 🇷🇺', url: 'https://t.me/fumo_and_RZD', desc: '', image: 'images/fumoRZD.jpg' },
+      { title: 'Невероятные путешествие фумо 🇷🇺', url: 'https://t.me/MyonIsCute', desc: 'на ЖД?', image: 'images/fumoRZD.jpg' },
 
-      { title: 'It`s hard 🍓🍉', url: 'https://t.me/shphard', desc: '', image: 'images/pantiak.jpg' },
+      { title: 'It`s hard 🍁', url: 'https://t.me/shphard', desc: 'пантиак', image: 'images/pantiak.jpg' },
 
       { title: 'Цейхгауз 2.0', url: 'https://t.me/Zeughauss', desc: '', image: 'images/banlordik.jpg' },   
 
@@ -130,9 +135,9 @@
 
       { title: 'Проект "Нефтяная Комната"', url: 'https://t.me/oil_records', desc: 'проджект сайберия'+'ㅤㅤㅤㅤㅤㅤ'+'(без него ничего бы не было)', image: 'images/oil.jpg', bg: 'siberia-gradient'},   
 
-      { title: 'Слава Фумо z', url: 'https://t.me/slavafumo1488Z', desc: 'настоящий живой американец', image: 'images/slava_fumo.jpg' },   
+      { title: 'Слава Фумо Z', url: 'https://t.me/slavafumo1488Z', desc: 'настоящий живой американец', image: 'images/slava_fumo.jpg' },   
 
-      { title: 'Subarashii shoujo archive 🍓', url: 'https://t.me/subarashii_shoujo', desc: '', image: 'images/subarashi.jpg' },   
+      { title: '🎃Subarashii shoujo archive🎃', url: 'https://t.me/subarashii_shoujo', desc: '', image: 'images/subarashi.jpg' },   
 
          { 
         title: 'Микуизм 🍇🌸', 
@@ -145,27 +150,31 @@
         ]
       },
 
-      { title: 'Осетинские Пироги 🍐 культ любви Raisen 🚺', url: 'https://t.me/OsetPie', desc: '', image: 'images/pirogi.jpg' },
+      { title: 'Осетинские Пироги 🍐', url: 'https://t.me/OsetPie', desc: '', image: 'images/pirogi.jpg' },
 
       { title: '〰️〰️Bocchi the neet〰️〰️', url: 'https://t.me/BocchiTheNeet', desc: '', image: 'images/bocchi.jpg' },   
 
       { title: 'loneliness all over', url: 'https://t.me/noiseeverywhere', desc: '', image: 'images/loneliness.jpg' },   
 
-      { title: '⚡️Хуевый🇦🇬Николаев⚡️', url: 'https://t.me/Hueviu_Nikolaev227', desc: '', image: 'images/nikolaev.jpg' },   
-
-      { title: 'альТУШКИ😳Пикчи😱Скачать🤑Трахатъ😈3+', url: 'https://t.me/+vzp97Xvolv1jZjJk', desc: '', image: 'images/altushki.jpg' },   
+      { title: 'альТУШКИ😳Пикчи😱Скачать🤑Трахатъ😈3+', url: 'https://t.me/+PHRkCW2OIUljM2Y0', desc: '', image: 'images/altushki.jpg' },   
 
       { title: 'Weirdo autistic people', url: 'https://t.me/CutePeople3', desc: '', image: 'images/weirdo.jpg' },   
 
-      { title: 'добро и позитив real 🇸🇴', url: 'https://t.me/slaboumieplezen', desc: '', image: 'images/dobro.jpg' },   
+      { title: 'добро и позитив real', url: 'https://t.me/slaboumieplezen', desc: '', image: 'images/dobro.jpg' },   
+         
+      { title: 'Львиный кАнал', url: 'https://t.me/Xoxloboika', desc: '', image: '../images/lion.jpg' },  
+
+      { title: '2∞λετбορьбы-core', url: 'https://t.me/zweihundertjahre', desc: '', image: '../images/200.jpg' },  
     ];
+
+    // (Twemoji используется отдельно; не выполняем локальные подмены здесь)
 
     // Неиспользуемая кнопка для моих каналов
     /*
     const adminChannels = [
       { title: 'test', url: '', desc: 'Главный канал', image: '' },
-      { title: 'test', url: '', desc: 'Новости', image: '' },
-      { title: 'test', url: '', desc: 'Общение', image: '' }
+      { title: 'test', url: '', desc: 'test', image: '' },
+      { title: 'test', url: '', desc: 'test', image: '' }
       
     ];
     */
@@ -223,13 +232,13 @@
           thumb.textContent = (it.title?.[0] || '#').toUpperCase();
         }
 
-        const title = document.createElement('h3');
-        title.className = 'title';
-        title.textContent = it.title || `Карточка ${idx + 1}`;
+    const title = document.createElement('h3');
+    title.className = 'title';
+    title.textContent = it.title || `Карточка ${idx + 1}`;
 
-        const desc = document.createElement('p');
-        desc.className = 'desc';
-        desc.textContent = it.desc || '';
+    const desc = document.createElement('p');
+    desc.className = 'desc';
+    desc.textContent = it.desc || '';
 
         wrapper.appendChild(badge);
         wrapper.appendChild(thumb);
@@ -249,7 +258,6 @@
       });
 
       // После рендера карточек парсим эмоджи
-      twemoji.parse(document.body);
     }
 
     // Модальное окно
@@ -276,11 +284,18 @@
     };
  */
     renderCards();
+    // После рендера карточек — заменить эмодзи на изображения Twemoji (SVG). Если Twemoji не доступна,
+    // применим запасной emoji-шрифт через класс .emoji
+    if (window.twemoji) {
+      try {
+        twemoji.parse(document.body, { folder: 'svg', ext: '.svg' });
+      } catch (e) {
+        console.error('twemoji.parse failed:', e);
+        document.body.classList.add('emoji');
+      }
+    } else {
+      document.body.classList.add('emoji');
+    }
   </script>
 </body>
 </html>
-
-
-
-
-
