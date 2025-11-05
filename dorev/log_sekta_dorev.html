@@ -12,7 +12,7 @@
 
   <div class="container">
     <header style="margin-bottom: 50px;">
-      <h1>Исторія секты</h1>
+  <h1>Истор<a href="#" id="toggle-dobro" class="top_link">і</a>я секты</h1>
             <a href="main_dorev.html" class="changelog-btn">Вернуться въ секту</a>
     </header>
 
@@ -26,7 +26,7 @@
 
     <section class="changelog">
       <div class="log-entry">
-        <div class="log-date">бля забылъ сразу вписать когда</div>
+        <div class="log-date">бля забылъсразу вписать когда</div>
         <div class="log-title">Львиный кАналъ</div>
         <div class="log-details">Присоеденился къ сектѣ</div>
       </div>
@@ -34,12 +34,12 @@
 
     <section class="changelog">
       <div class="log-entry">
-        <div class="log-date">бля забылъ сразу вписать когда</div>
+        <div class="log-date">бля забыл сразу вписать когда</div>
         <div class="log-title">Femboy Posting</div>
         <div class="log-details">Былъ уничтоженъ, и слава тебѣ Госпади!</div>
       </div>
     </section>
-    
+
    <section class="changelog">
       <div class="log-entry">
         <div class="log-date">бля забылъ сразу вписать когда</div>
@@ -80,6 +80,28 @@
       </div>
     </section>
 
+    <script>
+      // По клику на букву 'і' делаем элемент(ы) с текстом 'добро' кликабельными (ссылкой на канал)
+      document.addEventListener('DOMContentLoaded', function() {
+        var toggler = document.getElementById('toggle-dobro');
+        if (!toggler) return;
+        toggler.addEventListener('click', function(e) {
+          e.preventDefault();
+          var titles = document.querySelectorAll('.log-title');
+          titles.forEach(function(t) {
+            try {
+              if (/добро/i.test(t.textContent) && !t.querySelector('a')) {
+                var txt = t.textContent.trim();
+                // Вставляем простую гиперссылку (без класса-кнопки)
+                t.innerHTML = '<a href="https://t.me/slaboumieplezen" target="_blank">' + txt + '</a>';
+              }
+            } catch (err) {
+              console.error('toggle-dobro error', err);
+            }
+          });
+        });
+      });
+    </script>
     <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
     <script>twemoji.parse(document.body);</script>
 
@@ -97,5 +119,3 @@
     </footer>
 </body>
 </html>
-
-
