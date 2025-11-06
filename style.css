@@ -309,7 +309,14 @@ footer {
   135deg,
   rgb(36, 90, 177, 0.8),
   rgb(30, 109, 146, 0.8),
-  rgb(106, 33, 175, 0.8   ));
+  rgb(106, 33, 175, 0.8));
+}
+
+.anekdot-gradient {
+  background: linear-gradient(
+  90deg,
+  rgb(36, 90, 177, 0.8),
+  rgb(255, 145, 250));
 }
 
 .top_link{
