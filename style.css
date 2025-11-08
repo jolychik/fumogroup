@@ -315,8 +315,8 @@ footer {
 .anekdot-gradient {
   background: linear-gradient(
   90deg,
-  rgb(36, 90, 177, 0.8),
-  rgb(255, 145, 250));
+  rgb(45, 129, 238, 0.5),
+  rgba(255, 145, 250, 0.5));
 }
 
 .top_link{
